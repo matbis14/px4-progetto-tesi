@@ -66,7 +66,7 @@ class MocapNode(Node):
         # Posizione: ENU -> NED
         p = msg.pose.pose.position  # ENU: x=E, y=N, z=U
         odom.pose_frame = VehicleOdometry.POSE_FRAME_NED
-        odom.position = [float(p.y)+1.0, float(p.x), float(-p.z)]
+        odom.position = [float(p.y), float(p.x), float(-p.z)]
 
         # Orientazione: prendiamo quella di PX4 (non fondiamo yaw EV)
         if self.att_msg:
